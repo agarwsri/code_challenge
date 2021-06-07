@@ -53,7 +53,7 @@ public class AccountsController {
   
   @PatchMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Object> transferMoney(@RequestBody @Valid MoneyTransferRequest request) {
-	  log.info("Inside transferMoney for request: ", request);
+	  log.info("Inside transferMoney for request {} ", request);
 	  try {
 		  this.accountsService.transferMoney(request);
 		  return new ResponseEntity<>(HttpStatus.OK);
